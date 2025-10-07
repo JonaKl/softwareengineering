@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: softwareengineering
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: sa
+    password: sa
