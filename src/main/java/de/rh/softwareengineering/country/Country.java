@@ -1,12 +1,16 @@
 package de.rh.softwareengineering.country;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table
+@Data
 public class Country {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     String countryName;
 }

@@ -10,10 +10,9 @@ import java.util.List;
 public class CountryService {
     private final CountryRepository countryRepository;
 
-    public List<Country> getCountries() {
-        List<Country> countries = countryRepository.findAll();
-        System.out.println("countries size: " + countries.size());
-        System.out.println("countries: " + countries);
-        return countries;
+    public String getCountry() {
+        Country country = countryRepository.findAll().getFirst();
+        System.out.println("country: " + country.getCountryName());
+        return country.getCountryName();
     }
 }

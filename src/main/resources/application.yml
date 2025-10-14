@@ -3,9 +3,24 @@ spring:
     name: softwareengineering
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     show-sql: true
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: sa
     password: sa
+
+management:
+  endpoints:
+    web:
+      cors:
+        allowed-origins: "*"
+        allowed-headers: "*"
+        allowed-methods: "*"
+---
+spring:
+  config:
+    activate:
+      on-profile: "dev"
+  datasource:
+    url: jdbc:postgresql://database:5432/postgres
