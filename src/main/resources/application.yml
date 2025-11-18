@@ -16,7 +16,7 @@ management:
       cors:
         allowed-origins: "*"
         allowed-headers: "*"
-        allowed-methods: "*"
+        allowed-methods:  "*"
 ---
 spring:
   config:
