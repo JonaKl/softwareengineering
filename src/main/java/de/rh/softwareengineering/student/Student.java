@@ -1,7 +1,10 @@
 package de.rh.softwareengineering.student;
 
+import de.rh.softwareengineering.application.Application;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -21,4 +24,7 @@ public class Student {
 
     private String firstName;
     private String lastName;
+
+    @OneToMany(mappedBy = "student")
+    private List<Application> applications;
 }
