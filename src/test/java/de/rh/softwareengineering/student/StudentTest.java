@@ -17,8 +17,8 @@ class StudentTest {
         student.setFirstName("John");
         student.setLastName("Doe");
         student = studentRepository.save(student);
-        System.out.println("Created student ID: " + student.getId());
-        Student createdStudent = studentRepository.findById(student.getId()).orElse(null);
+        System.out.println("Created student ID: " + student.getStudentId());
+        Student createdStudent = studentRepository.findById(student.getStudentId()).orElse(null);
         assertNotNull(createdStudent);
         assertEquals("John", createdStudent.getFirstName());
         assertEquals("Doe", createdStudent.getLastName());
