@@ -64,6 +64,7 @@ public class LearningAgreementControllerTest {
         log.info("no Applications are created for this student");
         int expectedNumberOfItems = 0;
         check(expectedNumberOfItems);
+        em.flush();
         Student s = em.find(Student.class, student.getStudentId());
         // was this student really stored in db?
         assertNotNull(s);
