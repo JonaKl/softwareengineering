@@ -1,28 +1,14 @@
 package de.rh.softwareengineering.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
-import java.io.Serial;
-import java.io.Serializable;
-
-@Entity
-@Table(name = "UserData")
 @Data
-@NamedQuery(name = "User.loginUser", // frei wählbar, aber Konvention --> Selbstdoku
-        query = "Select u from User u where u.userId = :userId and u.password = :password") // JPQL
-
-public class User implements Serializable {
-    @Serial
-    private static final long serialVersionUID = 1L;
-
-    @Id
+@AllArgsConstructor
+public class UserCreationDTO {
     @Email(message = "Invalid email format", regexp = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")
     @NotNull
     private String userId;
@@ -31,5 +17,4 @@ public class User implements Serializable {
                     "one lowercase letter, one number, and one special character.")
     @NotNull
     private String password;
-
 }
